@@ -1,5 +1,5 @@
-mod print;
+mod arrays;
 
 fn main() {
-    print::run()
+    arrays::run()
 }
