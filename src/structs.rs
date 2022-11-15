@@ -22,6 +22,14 @@ impl Person {
     fn full_name(&self) -> String {
         format!("{} {}", &self.first_name, &self.last_name)
     }
+
+    fn set_last_name(&mut self, last: &str) {
+        self.last_name = last.to_string();
+    }
+
+    fn to_tuple(self) -> (String, String) {
+        (self.first_name, self.last_name)
+    }
 }
 
 pub fn run() {
@@ -40,7 +48,9 @@ pub fn run() {
 
     // println!("Color: {} {} {}", c.0, c.1, c.2);
 
-    let mut p = Person::new("Muhib", "Dev");
-
+    let mut p = Person::new("Marry", "Dev");
     println!("Person: {} ", p.full_name());
+    p.set_last_name("Muhib");
+    println!("Person: {} ", p.full_name());
+    println!("Person Tuple: {:?} ", p.to_tuple());
 }
